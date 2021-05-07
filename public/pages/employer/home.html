@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../vendors/css/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendors/css/grid.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendors/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendors/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendors/css/pre-con.min.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/swal.min.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/home.min.css">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500&display=swap" rel="stylesheet">
+    <title>Tulba Homepage</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../../resources/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../resources/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../resources/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../../resources/favicons/site.webmanifest">
+    <link rel="mask-icon" href="../../resources/favicons/safari-pinned-tab.svg" color="#ffdc0d">
+    <link rel="shortcut icon" href="../../resources/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffdc0d">
+    <meta name="msapplication-config" content="../../resources/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <script defer src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/selectivizr@1.0.3/selectivizr.min.js"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script defer src="../../vendors/js/jquery.waypoints.min.js"></script>
+    <script defer src="../../vendors/js/sweetalert2@9.min.js"></script>
+	<script defer src="../../vendors/js/pre-con.min.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-storage.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+	<script defer src="../../vendors/js/init-firebase.min.js"></script>
+    <script defer src="../../resources/js/auth.min.js"></script>
+    <script defer src="../../resources/js/home.min.js"></script>
+</head>
+
+<body class="emp-body">
+    <div class="se-pre-con"></div>
+    <header id="home" style="background-image: url('../../resources/img/Background_emp.png');">
+        <nav>
+            <div class="row">
+                <img src="../../resources/img/logo.png" alt="Tulba logo" class="logo" />
+                <ul class="main-nav js-main-nav">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#stories">Stories</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="#app">App</a></li>
+                    <li class="logged-out-btn" style="display:none;"><a href="#login" class="btn btn-full btn-login">Login</a></li>
+                    <li class="profile-container logged-in" style="display:none;">
+                        <img class="profile" alt="Profile Image" src="#">
+                        <div class="dropdown">
+                            <ul>
+                                <li><a href="profile.html">My Profile</a></li>
+                                <li><a href="jobs.html">My Jobs</a></li>
+                                <li><a onclick="logout('../../index.html')">Log out</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <a class="mobile-nav-icon js-nav-icon"><i class="ion-navicon-round"></i></a>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col span-1-of-2 hero-text-box">
+                <h3>Employer</h3>
+                <blockquote>
+                    There is no exercise better for the heart than reaching down and lifting people up.
+                </blockquote> 
+                <a class="btn btn-full js-scroll-to-login logged-out-btn" href="#login" style="display:none;">Post a Job</a>
+                <a class="btn btn-full js-scroll-to-login logged-in-btn" href="job-post.html" style="display:none;">Post a Job</a>
+            </div>
+            <div class="col span-1-of-2 pics">
+                <img class="pic_1" alt="Woman writing on a notebook" src="../../resources/img/graphs_job_laptop.png">
+                <img class="pic_2" alt="Group of people sititng" src="../../resources/img/architect_composition_data.png">
+            </div>
+        </div>
+    </header>
+
+    <section class="section-about js-section-about" id="about">
+        <div class="row">
+            <h2>Who are we?</h2>
+            <div class="js-wp-1">
+                <p class="long-copy">
+                Tulba is the brainchild of a bunch of undergraduate students who were
+				willing to defy norms and take on the challenge of solving the issue
+				of student unemployment which has seen students facing troubles in
+				terms of financing their personal projects.<br/><br/>As part of
+				Developer Student Clubs, UET Taxila students have developed the
+				platform Tulba which connects students with the right
+				opportunities. It helps the local businesses acquire the best of
+				minds and individuals who satisfy their vacancy. <br/><br/>This is
+				the first step in eradicating student unemployment. 
+                </p>
+                <img alt="DSC UET Taxila Logo" src="../../resources/img/DSC_UETT_Logo.png">
+            </div>
+        </div>
+    </section>
+
+    <section class="section-team">
+        <h2>Our Team</h2>
+		<div class="row team-container js-wp-6">
+				<div class="col span-1-of-3">
+					<div class="our-team">
+						<div class="pic">
+							<img alt="Shahzeb Kazmi" src="../../resources/img/shahzeb.png">
+						</div>
+						<div class="team-content">
+							<h3 class="title">Syed Shahzeb Kazmi</h3>
+							<span class="post">Flutter App Developer</span>
+						</div>
+						<ul class="social">
+							<li>
+								<a href="https://www.linkedin.com/in/shahzeb-k-a935b2128/" class="fa fa-envelope">Linkedin Profile</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col span-1-of-3">
+					<div class="our-team">
+						<div class="pic">
+							<img alt="Muhammad Ali" src="../../resources/img/ali.png">
+						</div>
+						<div class="team-content">
+							<h3 class="title">Muhammad Ali</h3>
+							<span class="post">Back-end Web Developer</span>
+						</div>
+						<ul class="social">
+							<li>
+								<a href="https://www.linkedin.com/in/muhammad-ali-4ab631198/" class="fa fa-envelope">Linkedin Profile</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col span-1-of-3">
+					<div class="our-team">
+						<div class="pic">
+							<img alt="Fasih Mehmood" src="../../resources/img/fasih.png">
+						</div>
+						<div class="team-content">
+							<h3 class="title">Fasih Mehmood</h3>
+							<span class="post">Front-end Web Developer</span>
+						</div>
+						<ul class="social">
+							<li>
+								<a href="https://www.linkedin.com/in/fasih-mehmood-b857b2175/" class="fa fa-envelope">Linkedin Profile</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+		</div>
+	</section>
+
+    <section class="section-stories" id="stories" style="background-image: url('../../resources/img/Background_2_emp.png');">
+        <div class="row">
+            <h2>Stories &mdash; Coming soon</h2>
+        </div>
+        <div class="row js-wp-2">
+            <div class="col span-1-of-3">&nbsp;</div>
+            <div class="col span-1-of-3">&nbsp;</div>
+            <div class="col span-1-of-3">&nbsp;</div>
+        </div>
+    </section>
+
+    <section class="section-partners" id="partners">
+        <div class="row">
+            <h2>Partners</h2>
+        <div class="js-wp-3">
+            <ul>
+                <li>
+                    <img alt="Logo Image" src="../../resources/img/daraz_logo.png">
+                </li>
+                <li>
+                    <img alt="Logo Image" src="../../resources/img/hbl_logo.png">
+                </li>
+                <li>
+                    <img alt="Logo Image" src="../../resources/img/jazz_logo.png">
+                </li>
+                <li>
+                    <img alt="Logo Image" src="../../resources/img/tehzeeb_logo.png">
+                </li>
+                <li>
+                    <img alt="Logo Image" src="../../resources/img/telenor_logo.png">
+                </li>
+                <li>
+                    <img alt="Logo Image" src="../../resources/img/uber_logo.png">
+                </li>
+                <li>
+                    <img alt="Logo Image" src="../../resources/img/mcdonalds_logo.png">
+                </li>
+            </ul>
+            
+        </div>
+        </div>
+    </section>
+
+    <section class="section-app" id="app">
+        <div class="row">
+            <h2>Available on Android</h2>
+        </div>
+        <div class="row">
+            <div class="col span-1-of-2 steps-box">
+                <img src="../../resources/img/app_phone.png" alt="Tulba app on Android" class="app-screen js-wp-7">
+            </div>
+            <div class="col span-1-of-2 steps-box">
+                <div class="works-step">
+                    <p>The Tulba app is available for beta testing on android.</p>
+                </div>
+                <div class="works-step">
+                    <p>Want to be a beta tester? Then look no further and submit your email. The app will be mailed to you.</p>
+                </div>
+                <form id="betaForm" name="betaForm">
+                    <div class="works-step">
+                        <input id="betaEmail" name="betaEmail" type="email" placeholder="Email Address" required/>
+                    </div>
+                    <input id="betaSubmit" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-login js-section-login logged-out" id="login" style="background-image: url('../../resources/img/Background_login_emp.png');">
+        <div class="row">
+            <h2>Login</h2>
+        </div>
+        <div class="row">
+            <div class="col span-2-of-3">
+                <img alt="Student Photo" src="../../resources/img/student_photo.png">
+            </div>
+            <div class="col span-1-of-3">
+                <form name="loginForm" id="loginForm">
+                    <div class="plan-box js-wp-4">
+                        <div>
+                            <p>Login to your account</p>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><i class="ion-ios-email-outline
+                                            icon-small"></i>
+                                    <input class="login-input" id="email" name="email" type="email" placeholder="Email Address" required/>
+                                            </li>
+                                <li>
+                                    <i class="ion-ios-locked icon-small"></i>
+                                    <input class="login-input" id="password" name="password" type="password" placeholder="Password" required/>
+                                </li>
+                                <li>
+                                    <input id="remember" name="remember" type="checkbox" value="Remember"/>
+                                        <label for="remember">Remember me</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <button class="login-icon submit-button" type="submit"><i class="ion-ios-arrow-forward"></i></button>
+                            <div><span>New here?</span>
+                            <a href="register.html" class="register">Register Now</a></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-form">
+        <div class="row">
+            <h2>We're happy to hear from you</h2>
+        </div>
+        <div class="row js-wp-5">
+            <form id="contactForm" name="contactForm">
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label for="contactName">Name</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input type="text" name="contactName" id="contactName" placeholder="Your name" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label for="contactEmail">Email</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input type="email" name="contactEmail" id="contactEmail" placeholder="Your email" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label for="findUs">How did you find us?</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <select name="findUs" id="findUs" required>
+                            <option value="" selected>Select One</option>
+                            <option value="friends">Friends</option>
+                            <option value="search">Search Engine</option>
+                            <option value="ad">Advertisement</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label for="message">Drop us a line</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <textarea name="message" id="message" placeholder="Your message" required></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col span-1-of-3">
+                        <label>&nbsp;</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <input type="submit" value="Send it!">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="row">
+            <div class="col span-1-of-2">
+                <ul class="footer-nav">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#app">Android App</a></li>
+                </ul>
+            </div>
+            <div class="col span-1-of-2">
+                <ul class="social-links">
+                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                    <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <p>
+                Copyright &copy; 2020 by Tulba. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

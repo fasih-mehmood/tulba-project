@@ -1,0 +1,549 @@
+/* ---------------------------------- */
+/* BASIC SETUP */
+/* ---------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  color: #000;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+body {
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  min-height: 100vh;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ---------------------------------- */
+/* REUSABLE COMPONENTS */
+/* ---------------------------------- */
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 0px 0;
+}
+
+/* ----- BUTTONS ----- */
+.btn:link,
+.btn:visited,
+input[type=submit] {
+  display: inline-block;
+  padding: 7px 20px;
+  text-decoration: none;
+  border-radius: 200px;
+  -webkit-transition: background-color 0.2s, color 0.2s, border 0.2s;
+  transition: background-color 0.2s, color 0.2s, border 0.2s;
+  -webkit-filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.161));
+          filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.161));
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit] {
+  background-color: #fc0;
+  color: #000;
+  margin-right: 15px;
+}
+
+.btn:hover, .btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+  background-color: #000;
+  cursor: pointer;
+  color: #fc0;
+}
+
+.btn-full:hover, .btn-full:active {
+  color: #fc0;
+}
+
+/* ----- Icon ----- */
+.back-icon {
+  display: block;
+  margin-left: 3%;
+  margin-top: -5%;
+  float: left;
+  width: 80px;
+  height: 70px;
+  border-radius: 50%;
+  text-align: center;
+  color: #fc0;
+  font-size: 400%;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.back-icon:hover, .back-icon:active {
+  color: #000;
+}
+
+.back-icon i {
+  -webkit-filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.161));
+          filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.161));
+}
+
+/* ---------------------------------- */
+/* HEADER */
+/* ---------------------------------- */
+header {
+  background: transparent;
+  margin-top: 1%;
+  text-align: center;
+}
+
+header .row {
+  max-width: 90%;
+  width: 100%;
+}
+
+header h2 {
+  font-weight: 300;
+  color: #000;
+}
+
+.logo-container {
+  width: 7%;
+  display: block;
+  float: left;
+}
+
+.logo-container .logo {
+  width: 100%;
+}
+
+/* ----- Dropdown ----- */
+.hero-text {
+  display: inline-block;
+  margin-top: 3%;
+}
+
+.profile-container {
+  position: relative;
+  display: block;
+  float: right;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  -webkit-filter: drop-shadow(5px 3px 6px rgba(0, 0, 0, 0.161));
+          filter: drop-shadow(5px 3px 6px rgba(0, 0, 0, 0.161));
+  cursor: pointer;
+}
+
+.profile-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
+.dropdown {
+  position: absolute;
+  right: 100%;
+  width: 150%;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.78);
+  -webkit-filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.161));
+          filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.161));
+  display: none;
+}
+
+.dropdown ul {
+  padding: 5% 0% 10% 0%;
+  list-style: none;
+}
+
+.dropdown ul li {
+  margin: 0 auto;
+  margin-top: 7%;
+  margin-left: 10%;
+}
+
+.dropdown ul li a {
+  text-decoration: none;
+  -webkit-transition: color 0.2s, border 0.2s;
+  transition: color 0.2s, border 0.2s;
+}
+
+.dropdown ul li a:link, .dropdown ul li a:visited {
+  color: #000;
+  border-bottom: 2px solid transparent;
+}
+
+.dropdown ul li a:hover, .dropdown ul li a:active {
+  color: #6e6e6e;
+  border-bottom: 2px solid #6e6e6e;
+}
+
+.nav-emp .dropdown {
+  background-color: rgba(9, 0, 41, 0.94);
+}
+
+/* ---------------------------------- */
+/* JOBS */
+/* ---------------------------------- */
+.section-jobs {
+  -webkit-animation: fadeIn 0.6s;
+          animation: fadeIn 0.6s;
+  width: 75%;
+  border: 1px solid rgba(112, 112, 112, 0.212);
+  background: rgba(247, 247, 247, 0.623);
+  opacity: 0.9;
+  -webkit-filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.161));
+          filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.161));
+  border-radius: 100px;
+  margin: 50px auto;
+}
+
+#search_bar {
+  text-align: center;
+}
+
+#search_bar input {
+  width: 40%;
+  font-size: 120%;
+  background: transparent;
+  border: none;
+  padding-bottom: 2px;
+  border-bottom: 3px solid #888;
+  text-align: center;
+}
+
+#search_bar input:focus {
+  border: 3px solid #888;
+}
+
+.noJobs {
+  text-align: center;
+}
+
+.jobs-container {
+  -webkit-animation: fadeIn 0.6s;
+          animation: fadeIn 0.6s;
+  padding: 2% 0;
+  min-height: 50vh;
+  height: 100%;
+}
+
+.jobs-container .row {
+  margin-top: 1%;
+  width: 90%;
+}
+
+.jobs-container .row:first-child {
+  margin-top: 1%;
+}
+
+.jobs-container .row:last-child {
+  margin-bottom: 1%;
+}
+
+.jobs-container .row:nth-child(n+7) {
+  display: none;
+}
+
+.jobs-container img {
+  float: left;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.job-title {
+  color: rgba(0, 0, 0, 0.712);
+  font-size: 100%;
+  font-weight: 500;
+  float: left;
+  margin-left: 3%;
+  margin-top: 2.5%;
+}
+
+.btn {
+  float: right;
+  margin-top: 0.8%;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.161);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.161);
+}
+
+.view {
+  float: right;
+  font-weight: 500;
+  margin-right: 8%;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.view i {
+  position: absolute;
+  font-size: 200%;
+  top: -50%;
+  right: -30%;
+}
+
+.view:hover, .view:active {
+  color: #888;
+}
+
+.row:last-of-type {
+  min-height: 7vh;
+}
+
+.less {
+  display: none;
+}
+
+/* ---------------------------------- */
+/* JOB DETAILS */
+/* ---------------------------------- */
+.section-details {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 70%;
+  z-index: 1000;
+  display: none;
+}
+
+.section-details .row {
+  width: 95%;
+}
+
+.section-details .job-container {
+  border-radius: 50px;
+  border: 1px solid rgba(112, 112, 112, 0.212);
+  background: rgba(247, 247, 247, 0.623);
+  opacity: 0.9;
+  -webkit-filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.161));
+          filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.161));
+}
+
+.span-1-of-2 .btn {
+  float: none;
+}
+
+.span-1-of-2 .row {
+  width: 60%;
+}
+
+.span-1-of-2 h3 {
+  text-transform: uppercase;
+  font-size: 140%;
+  font-family: 'Bebas Neue','DM Sans', sans-serif;
+  font-weight: normal;
+  margin-top: 15%;
+}
+
+.span-1-of-2 li {
+  margin-top: 2%;
+  margin-left: 6%;
+  font-size: 90%;
+}
+
+.span-1-of-2:last-child {
+  text-align: center;
+}
+
+.span-1-of-2:last-child h3 {
+  margin-top: 12%;
+}
+
+.span-1-of-2:last-child p {
+  margin-top: 3%;
+  font-size: 90%;
+}
+
+.span-1-of-2:last-child a {
+  margin-top: 20%;
+}
+
+.job-logo {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.hidePop {
+  position: absolute;
+  bottom: -15%;
+  left: -15%;
+}
+
+/* ---------------------------------- */
+/* FOOTER */
+/* ---------------------------------- */
+footer {
+  height: 100%;
+}
+
+/* ---------------------------------- */
+/* EMPLOYER */
+/* ---------------------------------- */
+.emp-body li a:link, .emp-body li a:visited {
+  color: #e0e0e0;
+}
+
+.emp-body .dropdown {
+  color: #fff;
+  background-color: #000530;
+}
+
+.emp-body .dropdown ul li a:link, .emp-body .dropdown ul li a:visited {
+  color: #fff;
+}
+
+.emp-body .btn-full:link, .emp-body .btn-full:visited {
+  color: #fc0;
+  background: #000;
+}
+
+.emp-body .btn-full:hover, .emp-body .btn-full:active {
+  color: #000;
+  background: #fc0;
+}
+
+/* ---------------------------------- */
+/* QUERIES */
+/* ---------------------------------- */
+/* desktops (widths greater than 1400) */
+@media only screen and (min-width: 1400px) {
+  body {
+    font-size: 140%;
+  }
+  .jobs-container .row {
+    width: 90%;
+  }
+  .row {
+    max-width: 1440px;
+  }
+  .back-icon {
+    height: 20%;
+  }
+}
+
+/* Big tablet to 1200px (widths  smaller than 1140px) */
+@media only screen and (max-width: 1200px) {
+  .row {
+    padding: 0 2%;
+  }
+  header .row {
+    width: 100%;
+    max-width: 95%;
+  }
+}
+
+/* Small tablet to big tablet: from 768px to 1023px */
+@media only screen and (max-width: 1023px) {
+  body {
+    font-size: 16px;
+  }
+  .jobs-container img {
+    min-width: 50px;
+    min-height: 50px;
+  }
+  .back-icon {
+    width: 8%;
+    height: 15%;
+  }
+}
+
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+  body {
+    font-size: 13px;
+  }
+  .profile-container {
+    height: 50px;
+  }
+  .profile-container ul {
+    width: 70px;
+  }
+  .profile-container .dropdown {
+    width: 80px;
+  }
+  .job-title {
+    width: 60%;
+  }
+  .row {
+    padding: 0 4%;
+  }
+  .jobs-container .row {
+    padding: 2.5% 0;
+  }
+  .jobs-container img {
+    min-width: 30px;
+    min-height: 30px;
+    width: 30px;
+    height: 30px;
+  }
+  .btn:link, .btn:visited {
+    padding: 5px 15px;
+  }
+  .jobs-container .row {
+    width: 98%;
+    margin-top: 1%;
+  }
+  .back-icon {
+    width: 8%;
+    height: 13%;
+  }
+}
+
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 10px;
+  }
+  .section-jobs {
+    width: 90%;
+  }
+  header {
+    margin-top: 4%;
+  }
+  .job-title {
+    font-size: 12px;
+  }
+  .logo-container,
+  .profile-container {
+    width: 50px;
+    height: 50px;
+  }
+  .jobs-container .row {
+    width: 100%;
+    margin-top: 10%;
+  }
+  .btn:link, .btn:visited {
+    padding: 7px 14px;
+  }
+  .view {
+    margin-right: 15%;
+    margin-top: 3%;
+  }
+  .back-icon {
+    width: 10%;
+    height: 10%;
+    left: 0;
+  }
+}
+/*# sourceMappingURL=jobs.css.map */

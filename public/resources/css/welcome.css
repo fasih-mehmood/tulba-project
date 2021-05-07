@@ -1,0 +1,119 @@
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #ffcc00;
+}
+
+html,
+body {
+    background-color: #000;
+    color: #555;
+    font-family: 'Google Sans', sans-serif;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow: hidden;
+}
+
+.main {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.logo {
+    margin: 0 auto;
+    height: 120px;
+    display: block;
+}
+
+.row { margin: 5% 0;}
+
+.hero-text {
+    font-weight: bold;
+    font-size: 290%;
+}
+
+.buttons {
+    width: 50%;
+    margin: 0% auto;
+}
+
+.col:last-child {
+    float: right;
+}
+
+.btn:link,
+.btn:visited {
+    font-size: 170%;
+    display: inline-block;
+    padding: 20px 80px;
+    text-decoration: none;
+    border-radius: 40px;
+    background-color: #fc0;
+    color: #000;
+    margin: 3%;
+    -webkit-transition: background-color 0.2s, color 0.2s, border 0.2s;
+    transition: background-color 0.2s, color 0.2s, border 0.2s;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #deb100;
+    cursor: pointer;
+}
+
+.bottom-text {
+    display: block;
+    font-size: 140%;
+}
+
+
+/* --------------------------- */
+/* RESPONSIVE */
+/* --------------------------- */
+
+@media only screen and (max-width: 1200px) {
+    .btn:link,.btn:visited { padding: 20px 55px; }
+
+}
+
+@media only screen and (max-width: 1023px) {
+    .col { width: 100%; }
+    
+}
+
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+    body { font-size: 9px; }
+    
+    .row { margin:  10% auto; }
+
+    .btn:link,
+    .btn:visited { padding: 15px 40px;}
+
+}
+
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px) {
+    body { font-size: 8px; }
+
+    .btn:link,
+    .btn:visited { 
+        padding: 13px 35px
+        ; margin: 6% auto;
+    }
+
+    .row { margin: 18% auto; width: 100%; }
+}
+
+
+@media only screen and (max-height: 1200px) {
+    html {
+        overflow-y: visible;
+    }
+}

@@ -1,0 +1,258 @@
+	$primaryBtnClr: #fc0;
+	$secondaryBtnClr: #000;
+	$primaryTextClr: #000;
+	$secondaryTextClr: #fff;
+	$greyBackground: #f4f4f4;
+	$hover: #888;
+	@mixin glassborder {
+		border: 1px solid rgba(112, 112, 112, 0.769);
+		background: rgba(255, 255, 255, 0.764);
+		filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.329));
+		border-radius: 90px;
+		width: 80%;
+	}
+	@mixin background {
+		background-size: cover;
+		background-position: center;
+	}
+
+/* ---------------------------------- */
+/* BASIC SETUP */
+/* ---------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: $secondaryTextClr;
+    color: $primaryTextClr;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+	overflow-x: hidden;
+	text-align: center;
+}
+
+body {
+	@include background;
+}
+
+/* ---------------------------------- */
+/* HEADER */
+/* ---------------------------------- */
+
+header {
+	h2 {
+		font-weight: 300;
+		color: $primaryTextClr;
+	}
+}
+
+.logo-container {
+	width: 100%;
+	display: block;
+	margin: 1% 0;
+	.logo {
+		width: 7%;
+	}
+}
+
+/* ---------------------------------- */
+/* REUSABLE COMPONENTS */
+/* ---------------------------------- */
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.fadeIn {
+	animation: fadeIn 0.6s;
+}
+
+/* ----- Remove arrows  ----- */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* ----- Icon ----- */
+
+.back-icon {
+	background-color: transparent;
+	display: block;
+	float: left;
+	width: 100px;
+	height: 90px;
+	border-radius: 50%;
+	text-align: center;
+	color: #fc0;
+	font-size: 400%;
+	transition: color 0.2s;
+	&:hover,
+	&:active {
+		color: #000;
+	}
+	i {
+	filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.161));
+	}
+}
+
+.submit-button {
+	cursor: pointer;
+	border: none;
+	display: block;
+	margin: 0;
+	float: right;
+}
+
+/* ---------------------------------- */
+/* JOB POST */
+/* ---------------------------------- */
+
+.job-container {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-20%);
+	@include glassborder;
+	.row {
+		margin: 3% auto;
+	}
+}
+
+.input { width: 80%; }
+
+/* ----- Form ----- */
+
+input,select {
+	margin-top: 5%;
+	width: 80%;
+	border: none;
+	border-bottom: 3px solid #86868685; 
+	background: transparent;
+	text-align: center;
+	&:focus { border: 3px solid #86868685; }
+}
+
+select { margin-top: 3%; }
+
+textarea {
+	width: 90%;
+	text-align: left;
+	background: rgba(255, 255, 255, 0.781);
+	border-radius: 30px;
+	overflow-y:auto;
+	padding: 4%;
+	border: 2px solid #86868685;
+	resize:none;
+}
+
+#location { width: 90%; }
+
+#deadline { margin-top: 0%; }
+
+label { color: #7c7c7c;}
+
+.before { 
+	position: absolute;
+	margin-top: 2%;
+	margin-left: 1%;
+}
+
+footer {
+	.row { margin: 2% auto;}
+	margin-top: 70%;
+}
+
+
+/* ---------------------------------- */
+/* QUERIES */
+/* ---------------------------------- */
+
+/* Big tablet to 1200px (widths  smaller than 1140px) */
+@media only screen and (max-width: 1200px) {
+	.row { padding: 0 2%; }
+	.job-container { 
+		position: relative; 
+		left:0;
+		top:0;
+		transform: translate(0);
+		
+	}
+	footer { margin-top: 0%; }
+}
+
+/* Small tablet to big tablet: from 768px to 1023px */
+@media only screen and (max-width: 1023px) {
+    body { font-size: 18px;
+		min-height: 100vh; }
+	
+	.back-icon {
+		width: 12%;
+		height: 12%;
+	}
+}
+
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+    body { 
+		font-size: 12px;
+	}
+
+    .row { 
+		padding: 0 4%;
+		width: 90%;
+	}
+	
+	section {
+		margin-top: 13vh;
+	}
+
+    .col { 
+        width: 50%; 
+        margin: 0 0 4% 0%;
+	}
+    h2 { font-size: 150%; }
+    
+
+	.back-icon {
+		width: 15%;
+		height: 12%;
+	}
+}
+
+
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px) {
+	body { font-size: 10px; }
+	.col { width: 100%; }
+
+	.logo { 
+		position: absolute; 
+		top: 5%;
+		left: 45%;
+	}
+
+	#location { width: 80%; }
+
+	label { position: absolute;}
+	
+	.back-icon {
+		width: 15%;
+		height: auto;
+	}
+
+}

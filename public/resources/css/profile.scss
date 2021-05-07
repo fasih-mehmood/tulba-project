@@ -1,0 +1,563 @@
+$primaryBtnClr: #fc0;
+$secondaryBtnClr: #000;
+$primaryTextClr: #000;
+$secondaryTextClr: #fff;
+$greyBackground: #f4f4f4;
+$hover: #888;
+@mixin glassborder {
+	border: 1px solid rgba(112, 112, 112, 0.769);
+	background: rgba(255, 255, 255, 0.764);
+	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.329));
+}
+@mixin background {
+	background-repeat: no-repeat;
+	background-size: 100% 100%; 
+	background-attachment: fixed; 
+}
+
+
+/* ---------------------------------- */
+/* BASIC SETUP */
+/* ---------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+	box-sizing: border-box;
+	word-wrap: break-word;
+}
+
+html,
+body {
+    color: $primaryTextClr;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    text-rendering: optimizeLegibility;
+	overflow-x: hidden;
+}
+
+body { 
+	@include background; 
+	min-height: 100vh;
+}
+
+/* ---------------------------------- */
+/* REUSABLE COMPONENTS */
+/* ---------------------------------- */
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* ----- BUTTONS ----- */
+
+.btn {
+	&:link,
+	&:visited {
+		display: inline-block;
+		padding: 7px 20px;
+		text-decoration: none;
+		border-radius: 200px;
+		transition: background-color 0.2s, color 0.2s, border 0.2s;
+		filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.161));
+	}
+    &:hover, 
+    &:active {
+        background-color: $secondaryBtnClr;
+        cursor: pointer;
+        color: $primaryBtnClr;
+    }
+}
+
+.btn-full{
+	&:link,
+	&:visited{
+		background-color: $primaryBtnClr;
+		color: $primaryTextClr;
+		margin-right: 15px;
+	}
+    &:hover,
+    &:active { 
+        background-color: $secondaryBtnClr;
+        color: $primaryBtnClr;
+    }
+}
+
+/* ----- Icon ----- */
+
+.back-icon {
+	position: absolute;
+	background: transparent;
+	color: #fc0;
+	display: block;
+	float: right;
+	width: 80px;
+	height: 70px;
+	bottom: -2%;
+	right: -2%;
+	transition: color 0.2s;
+	&:hover,
+	&:active {
+		color: #000;
+	}
+	i {
+		font-size: 400%;
+		filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.161));
+	}
+}
+
+.submit-btn {
+	cursor: pointer;
+	border: none;
+	display: block;
+	margin: 0;
+	position: relative;
+	color: $primaryBtnClr;
+	transition: color 0.2s;
+	&:hover,
+	&:active { 
+		color: $secondaryBtnClr;
+	}
+}
+/* ---------------------------------- */
+/* HEADER */
+/* ---------------------------------- */
+
+header {
+	position: relative;
+	.row { max-width: 90%; width: 100%; }
+	background: transparent;
+	margin-top: 1%;
+}
+
+.edit {
+	display: block;
+	float: left;
+	font-size: 140%;
+	bottom: 0;
+	margin-top: 5%;
+}
+
+/* ----- Dropdown ----- */
+
+
+.profile-container {
+	position: relative;
+	display: block;
+	float: right;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	filter: drop-shadow(5px 3px 6px rgba(0, 0, 0, 0.161));
+	cursor: pointer;
+	img { 
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		min-height: 100%;
+		object-position: center;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+}
+
+.dropdown {
+	position: absolute;
+	right: 100%;
+	width: 150%;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.78);
+	filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.161));
+	display: none;
+	z-index: 1;
+	ul {
+		padding: 5% 0% 10% 0%;
+		list-style: none;
+		li {
+			margin: 0 auto;
+			margin-top: 7%;
+			margin-left: 10%;
+			a {
+				text-decoration: none;
+				transition: color 0.2s, border 0.2s;
+				&:link,
+				&:visited {
+					color: $primaryTextClr;
+					border-bottom: 2px solid transparent;
+				}
+				&:hover,
+				&:active {
+					color: rgb(110, 110, 110);
+					border-bottom: 2px solid rgb(110, 110, 110);
+				}
+			}
+		}
+	}
+}
+
+.nav-emp .dropdown { background-color: rgba(9, 0, 41, 0.94);}
+
+/* ---------------------------------- */
+/* PROFILE */
+/* ---------------------------------- */
+
+.section-profile {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-40%);
+	width: 92%;
+}
+
+.col {
+	animation: fadeIn 0.6s;
+	border-radius: 50px;
+	@include glassborder;
+	width: 32%;
+	margin-left: 6%;
+	padding: 1.5%;
+}
+
+h2 { 
+	font-size: 140%;
+	font-weight: normal; 
+	&::after {
+		width: 30%;
+		height: 2px;
+		background: $hover;
+		display: block;
+		content: " ";
+	}
+}
+
+h4 {
+	margin-top: 3%;
+	font-weight: 500;
+	&::after {
+		margin: 0 auto;
+		width: 20%;
+		height: 2px;
+		background: $hover;
+		display: block;
+		content: " ";
+	}
+}
+
+/* ----- Biographics Panel ----- */
+
+.biographics {
+	min-height: 474px;
+	h4,p { text-align: center; }
+	p {
+		color: rgba(83, 83, 83, 0.9);
+		font-weight: normal;
+		margin-top: 2%;
+		font-size: 85%;
+	}
+}
+
+/* ----- Academic Panel ----- */
+
+.academic {
+	min-height: 474px;
+	h4,p { text-align: center; }
+	p {
+		color: rgba(83, 83, 83, 0.9);
+		font-weight: normal;
+		margin-top: 2%;
+		font-size: 85%;
+	}
+}
+
+/* ----- Skills Panel ----- */
+
+.skills {
+	width: 23%;
+	margin-left: 6%;
+	padding: 3%;
+	ul {
+		margin-top: 4%;
+		li { 
+			margin-top: 4%; 
+			color: rgba(83, 83, 83, 0.9);
+			font-weight: normal;
+			font-size: 85%;
+		}
+	}
+	p {
+		color: rgba(83, 83, 83, 0.9);
+		font-weight: normal;
+		margin-top: 2%;
+		font-size: 85%;
+	}
+	min-height: 357px;
+}
+
+/* ---------------------------------- */
+/* POPUP FORM */
+/* ---------------------------------- */
+
+.popup-background {
+    position: absolute;
+    height: 100vh;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+    align-items: center;
+    justify-content: center;
+	background-color: rgba(0, 0, 0, 0.4);
+	display: none;
+	z-index: 999;
+    animation: fadeIn, 0.4s;
+}
+
+.popup {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 60%;
+	margin: 0;
+	@include glassborder;
+	background: rgb(255, 255, 255);
+	border-radius: 50px;
+	.col {
+		background: none;
+		border: none;
+		filter: none;
+		width: 50%;
+		margin: 0;
+		text-align: center;
+		.row {
+			margin-top: 2%;
+		}
+	}
+}
+
+textarea { 
+	resize: none; 
+	outline: none; 
+	padding: 4%;
+	border-radius: 30px;
+}
+
+input,textarea {
+	background: rgba(255, 255, 255, 0.473);
+	border: 2px solid #86868685;
+	text-align: center;
+	width: 85%;
+	color: #5e5e5efd;
+	
+	&:focus { border: 3px solid #86868685; }
+}
+
+.row-submit { 
+	width: 10%;
+}
+
+/* The Close Button */
+.close {
+	top: -5%;
+	right: -5%;
+	position: absolute;
+	color: #fff;
+	font-size: 28px;
+	font-weight: bold;
+	&:hover,
+	&:focus {
+		color: #000;
+		text-decoration: none;
+		cursor: pointer;
+	}
+}
+
+/* ----- Disable Arrows ------ */
+
+input {
+	padding: 2%;
+	border: none;
+	border-bottom: 3px solid #86868685;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* ---------------------------------- */
+/* EMPLOYER */
+/* ---------------------------------- */
+
+.emp-body {
+    li a {
+		&:link,
+		&:visited {
+			color: rgb(224, 224, 224);
+		}
+    }
+    .dropdown { 
+		background-color: #000530; 
+		color: #fff;
+		ul li a{
+			&:link,&:visited { color: $secondaryTextClr;}
+		}
+	}
+
+	.btn-full {
+		&:link,&:visited {
+			color: $primaryBtnClr;
+			background: $secondaryBtnClr;
+		}
+		&:hover,&:active {
+			color: $primaryTextClr;
+			background: $primaryBtnClr;
+		}
+	}
+	.academic {
+		p{ margin-top: 3%;}
+	}
+	.skills {
+		max-height: 100%;
+		padding: 2%;
+		h4,p { text-align: center; }
+		p { padding-top: 2%; }
+	}
+}
+
+/* ---------------------------------- */
+/* QUERIES */
+/* ---------------------------------- */
+
+/* desktops (widths greater than 1400) */
+@media only screen and (min-width: 1400px) {
+	body { font-size: 120%; }
+	.row { max-width: 1440px; }
+
+	.back-icon { 
+		font-size: 110%;
+		width: 5%;
+		height: 8%;
+	}
+}
+/* Big tablet to 1200px (widths  smaller than 1140px) */
+@media only screen and (max-width: 1200px) {
+	.row { padding: 0 2%; }
+	header .row { 
+		width: 100%;
+		max-width: 95%; 
+	}
+	.span-1-of-2 {
+		.row { width: 80%; }
+	}
+	.skills { min-height: 300px; }
+	.academic { min-height: 450px; }
+}
+
+/* Small tablet to big tablet: from 768px to 1023px */
+@media only screen and (max-width: 1023px) {
+    body { font-size: 16px; }
+	.profile-container { 
+		ul { width: 70px; }
+		height: 60px; 
+	}
+	
+	.span-1-of-2 {
+		.row { width: 90%; }
+	}
+	.logo-container { width: 60px; }
+	.skills { min-height: 250px;}
+	.academic { min-height: 400px; }
+
+	.submit-btn { max-width: 70px; font-size: 70%; }
+
+	.popup { width: 80%; }
+
+}
+
+/* Small phones to small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+    body { font-size: 13px; }
+	
+	.profile-container { 
+		height: 50px; 
+		ul { width: 70px; }
+		.dropdown { width: 80px; }
+	}
+    .row { padding: 0 4%; }
+	
+	.skills { min-height: 200px; }
+	.academic { min-height: 300px; }
+	#editProfile input { width: 100%; }
+	
+	.submit-btn { 
+		max-width: 50px; 
+		max-height: 60px; 
+	}
+	.row-submit { width: 20%; }
+	textarea { min-height: 100px; }
+}
+
+
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px) {
+	body { font-size: 10px; }
+
+	header { margin-top: 4%; }
+
+	.section-profile { width: 45%; }
+
+	.profile-container { width: 12%; }
+
+	.back-icon { right: -50%; }
+
+	.col { 
+		margin-left: 0;
+		width: 100%; 
+		padding: 9%;
+		min-height: 150px;
+		margin-bottom: 4%;
+	}
+
+	.skills { min-height: 100px; }
+
+	.popup {
+		.row { width: 80%; }
+		.col { 
+			width: 100%; 
+			padding: 0%;
+		}
+		.submit-btn { 
+			min-width: 40px; 
+			min-height: 40px;
+		}
+		.row-submit {
+			margin-top: 3%;
+			width: 17%;
+		}
+	}
+
+	.emp-body {
+		.section-profile {
+			width: 90%;
+			.col { 
+				width: 45%; 
+				margin: 5% 2%; 
+				padding: 5%;
+				&:last-child {
+					margin: 1% 28%;
+				}
+			}
+		}
+	}
+
+}

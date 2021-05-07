@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+https://tulba-project.web.app/sitemap.xml

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../vendors/css/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendors/css/grid.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendors/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendors/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendors/css/pre-con.min.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/swal.min.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/job-post.min.css">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500&display=swap" rel="stylesheet">
+    <title>Post a Job</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../../resources/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../resources/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../resources/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../../resources/favicons/site.webmanifest">
+    <link rel="mask-icon" href="../../resources/favicons/safari-pinned-tab.svg" color="#ffdc0d">
+    <link rel="shortcut icon" href="../../resources/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffdc0d">
+    <meta name="msapplication-config" content="../../resources/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+    <script defer src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/selectivizr@1.0.3/selectivizr.min.js"></script>
+	<script defer src="../../vendors/js/sweetalert2@9.min.js"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+	<script defer src="../../vendors/js/pre-con.min.js"></script>
+	<script defer src="../../vendors/js/data-input-polyfill.dist.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-storage.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+	<script defer src="../../vendors/js/init-firebase.min.js"></script>
+	<script defer src="../../resources/js/auth.min.js"></script>
+	<script defer src="../../resources/js/post.min.js"></script>
+</head>
+
+<body style="background-image: url('../../resources/img/Background_job_post_emp.png')">
+    <div class="se-pre-con"></div>
+	<header class="row">
+        <div class="logo-container">
+            <img class="logo" alt="Logo Image" src="../../resources/img/logo.png">
+        </div>
+    </header>
+    <form id="postJobForm" name="postJobForm">
+        <section class="section-job-post fadeIn">
+            <div class="row job-container">
+                <div class="row">
+                    <h2>Post an Opportunity</h2>
+                </div>
+                <div class="row section">
+                    <p>Basic Information</p>
+                </div>
+                <div class="row input">
+                    <div class="col span-1-of-2">
+                        <input id="title" name="title" placeholder="Job Title" required />
+                    </div>
+                    <div class="col span-1-of-2">
+                        <select id="type" name="type" size="1" required>
+                            <option value="">Job Type</option>
+                            <option value="fulltime">Full Time</option>
+                            <option value="parttime">Part Time</option>
+                            <option value="freelance">Freelance</option>
+                            <option value="internship">Internship</option>
+                            <option value="temporary">Temporary</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row input">
+                    <div class="col span-1-of-2">
+                        <input id="website" type="text" name="website" placeholder="Company Website if any" />
+                    </div>
+                    <div class="col span-1-of-2">
+                        <label for="salary" class="before">$</label>
+                        <input class="input-field" id="salary" type="number" name="salary" step="0.01" min="0" placeholder="Salary" required />
+                    </div>
+                </div>
+                <div class="row input">
+                    <input id="location" type="text" name="location" placeholder="Job Location" required />
+                </div>
+                <div class="row input">
+                    <div class="col span-1-of-2">
+                        <input id="discipline" type="text" name="discipline" placeholder="Required Discipline" required />
+                    </div>
+                    <div class="col span-1-of-2">
+                        <input id="workingHours" type="number" name="workingHours" step="0.1" placeholder="Hours Per Week" required />
+                    </div>
+                </div>
+                <div class="row input">
+                    <div class="col span-1-of-2">
+                        <label for="deadline">Deadline:</label>
+                        <input id="deadline" type="date" name="deadline" required />
+                    </div>
+                    <div class="col span-1-of-2">
+                        <input id="cgpa" type="number" name="cgpa" step="0.01" min="0" max="4" placeholder="Minimum CGPA" required />
+                    </div>
+                </div>
+                <div class="row section">
+                    Employer Requirements
+                </div>
+                <div class="row input">
+                    <textarea id="skills" name="skills" wrap="soft" placeholder="Required Skills separated by commas" required></textarea>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="row">
+                <a class="back-icon" href="home.html"><i class="ion-android-arrow-dropleft-circle"></i></a>
+                <button class="back-icon submit-button" type="submit" ><i class="ion-android-arrow-dropright-circle"></i></button>
+            </div>
+        </footer>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../vendors/css/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendors/css/grid.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendors/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendors/css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="../../vendors/css/pre-con.min.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/swal.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendors/css/pretty-checkbox.min.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/register.min.css">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500&display=swap" rel="stylesheet">
+    <title>Register on Tulba</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../../resources/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../resources/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../resources/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../../resources/favicons/site.webmanifest">
+    <link rel="mask-icon" href="../../resources/favicons/safari-pinned-tab.svg" color="#ffdc0d">
+    <link rel="shortcut icon" href="../../resources/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffdc0d">
+    <meta name="msapplication-config" content="../../resources/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+    <script defer src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/selectivizr@1.0.3/selectivizr.min.js"></script>
+	<script defer src="../../vendors/js/sweetalert2@9.min.js"></script>
+	<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+	<script defer src="../../vendors/js/data-input-polyfill.dist.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-storage.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+	<script defer src="../../vendors/js/init-firebase.min.js"></script>
+	<script defer src="../../vendors/js/pre-con.min.js"></script>
+	<script defer src="../../resources/js/auth.min.js"></script>
+	<script defer src="../../resources/js/register.min.js"></script>
+</head>
+
+<body>
+	<div class="se-pre-con"></div>
+	<header>
+		<div class="logo-container">
+			<img class="logo" alt="Logo Image" src="../../resources/img/logo.png">
+		</div>
+		<div class="hero-text">
+			<h2>Register an account</h2>
+		</div>
+	</header>
+	<form id="signupForm" name="signupForm">
+		<section class="section-biographics" style="background-image: url('../../resources/img/Background_register.png');">
+			<h2 class="disabled">Biographics</h2>
+			<div class="row section">
+				<div id="js--profile-container" class="row profile-container" style="background-image:url('../../resources/img/plus.svg')">
+					<img id="js--profileImage" class="profileImage" alt="Profile Image" src="#" />
+				</div>
+				<div class="row profile-label">
+					<label for="imageUpload">Upload Profile Picture</label>
+					<input id="imageUpload" type="file" name="profile_photo" required accept="image/*">
+				</div>
+
+				<div class="row inputs">
+					<div class="col span-1-of-2">
+						<input id="fullName" type="text" name="fname" placeholder="Full Name" required/>
+					</div>
+					<div class="col span-1-of-2">
+						<input id="fatherName" type="text" name="fatherfname" placeholder="Father's Full Name" required/>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col span-1-of-2">
+						<input id="emailAddress" type="email" name="email" placeholder="Email Address" required/>
+					</div>
+					<div class="col span-1-of-2">
+						<input id="password" type="password" name="password" pattern=".{6,}" placeholder="Password" required/>
+					</div>
+				</div>
+
+				<div class="row address">
+					<input id="homeAddress" type="text" name="address" placeholder="Home Address" required/>
+				</div>
+
+				<div class="row">
+					<div class="col span-1-of-2 dob-gender">
+						<input id="dateOfBirth" type="date" lang="en" name="dob" required/>
+					</div>
+					<div class="col span-1-of-2">
+						<div id="gender">
+							<div class="pretty p-default p-round">
+								<input id="male" type="radio" name="gender" value="male" checked>
+								<div class="state">
+									<label for="male">Male</label>
+								</div>
+							</div>
+							<div class="pretty p-default p-round">
+								<input id="female" type="radio" value="female" name="gender">
+								<div class="state">
+									<label for="female">Female</label>
+								</div>
+							</div>
+							<div class="pretty p-default p-round">
+								<input id="other" type="radio" value="other" name="gender">
+								<div class="state">
+									<label for="other">Other</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col span-1-of-2">
+						<input id="phone" type="tel" name="phone" placeholder="Phone Number" required/>
+					</div>
+					<div class="col span-1-of-2">
+						<input id="uniEmail" type="email" name="uniEmail" placeholder="University Email Address"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col span-2-of-2">
+						<input id="linkedIn" type="text" name="linkedIn" placeholder="linkedIn Profile" value="NA"/>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section-academics" style="background-image: url('../../resources/img/Background_register_2.png');">
+			<h2 class="disabled">Academics</h2>
+			<div class="row section">
+				<div class="col span-1-of-2">
+					<div class="panel">
+						<input id="uniName" name="uniName" type="text" placeholder="University Name" required/>
+						<input id="majSub" name="majSub" type="text" placeholder="Major" required/>
+						<select id="degreeStat" name="degreeStat" required>
+							<option value="">Degree Status</option>
+							<option value="Undergraduate">Undergraduate</option>
+							<option value="Postgraduate">Postgraduate</option>
+						</select>
+						<input id="year" name="year" type="number" step="1" min="0" max="2030" placeholder="Graduation Year" required/>
+						<input id="cgpa" name="cgpa" type="number" step="0.01" min="0" max="4" placeholder="Enter CGPA" required/>
+					</div>
+				</div>
+				<div class="col span-1-of-2">
+					<div class="panel">
+						<div class="row">
+							<label for="skills">Relevant Skills</label>
+						</div>
+						<div class="row">
+						<textarea id="skills" name="skills" wrap="soft" maxlength="400" placeholder="Enter skills separated by commas" required></textarea>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<div class="row">
+				<a class="back-icon" href="home.html"><i class="ion-android-arrow-dropleft-circle"></i></a>
+				<button class="back-icon submit-button" type="submit"><i class="ion-android-arrow-dropright-circle"></i></button>
+			</div>
+		</section>
+	</form>
+</body>
+
+</html>

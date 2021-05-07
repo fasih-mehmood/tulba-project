@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="../../vendors/css/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendors/css/grid.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendors/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="../../vendors/css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="../../vendors/css/pre-con.min.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/swal.min.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/profile.min.css">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500&display=swap" rel="stylesheet">
+    <title>My Profile</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../../resources/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../resources/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../resources/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../../resources/favicons/site.webmanifest">
+    <link rel="mask-icon" href="../../resources/favicons/safari-pinned-tab.svg" color="#ffdc0d">
+    <link rel="shortcut icon" href="../../resources/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffdc0d">
+    <meta name="msapplication-config" content="../../resources/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+    <script defer src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/selectivizr@1.0.3/selectivizr.min.js"></script>
+	<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+	<script defer src="../../vendors/js/sweetalert2@9.min.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-storage.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+	<script defer src="../../vendors/js/init-firebase.min.js"></script>
+	<script defer src="../../resources/js/auth.min.js"></script>
+	<script defer src="../../resources/js/profile.min.js"></script>
+</head>
+
+<body class="emp-body" style="background-image: url('../../resources/img/Background_profile_emp.png');">
+	<div class="se-pre-con"></div>
+	<div class="popup-background">
+		<div class="popup fadeInDownBig">
+			<span class="close">&times;</span>
+			<form id="editProfile" name="editProfile">
+			</form>
+		</div>
+	</div>
+	<header>
+		<div class="row">
+			<a class="btn btn-full edit" href="#">Edit Profile</a>
+			<div class="profile-container">
+				<img class="profile" alt="Profile Image" src="#">
+				<div class="dropdown">
+					<ul>
+						<li><a href="jobs.html">My Jobs</a></li>
+						<li><a onclick="logout('../../index.html')">Log out</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section class="section-profile">
+		<div class="col span-1-of-3 biographics">
+		</div>
+		<div class="col span-1-of-3 academic">
+		</div>
+		<div class="col span-1-of-3 skills">
+		</div>
+		<a class="back-icon" href="home.html"><i class="ion-android-arrow-dropleft-circle"></i></a>
+	</section>
+
+
+</body>
+
+</html>
